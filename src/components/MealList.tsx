@@ -79,11 +79,19 @@ export const MealList = () => {
 							className="card bg-white dark:bg-slate-800 p-4 flex items-center justify-between group"
 						>
 							<div className="flex items-center gap-4">
-								<div className="w-12 h-12 bg-slate-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
-									<CategoryIcon category={meal.category} />
+								<div className="w-14 h-14 bg-slate-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center overflow-hidden shrink-0 border border-slate-100 dark:border-slate-800">
+									{meal.imageUrl ? (
+										<img
+											src={meal.imageUrl}
+											alt={meal.name}
+											className="w-full h-full object-cover"
+										/>
+									) : (
+										<CategoryIcon category={meal.category} />
+									)}
 								</div>
 								<div>
-									<h4 className="font-semibold text-slate-900 dark:text-white">
+									<h4 className="font-semibold text-slate-900 dark:text-white leading-tight">
 										{meal.name}
 									</h4>
 									<div className="flex gap-2 mt-1">
